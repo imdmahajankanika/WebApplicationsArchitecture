@@ -123,7 +123,7 @@ function sevenChar() {
 function splitBlocks() {
  
   var block = "";
-  block = str.replace(/([^.?!]+[\.\?\!]){5}/g,exp =>{
+  block = str.replace(/([^.?!]+[.?!]){5}/g,exp =>{
         return(`<p>${exp} </p>`)
     })
     document.getElementById("p1").innerHTML = block;
