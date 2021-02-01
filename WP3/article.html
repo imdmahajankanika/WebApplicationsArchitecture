@@ -7,6 +7,7 @@
         What the Internet is doing to our brains
         
         NICHOLAS CARR</h1>
+  <button onclick="sevenChar()">Words more than 7 chars</button>
   <button onclick="splitBlocks()">Split blocks</button>
   <button onclick="link()">GoogleLink</button>
 <p id="p1">
@@ -115,19 +116,36 @@ NICHOLAS CARR is the author of The Shallows and The Glass Cage: Automation and U
   innerHTML=innerHTML.replaceAll(text,"<span class='highlight'>" + text + "</span>")
   inputText.innerHTML = innerHTML;
 }
-document.getElementById("demo").innerHTML = "There are "+WordCount(str)+" words of more than 7 characters higlighted in green above";
+function sevenChar() {
+  document.getElementById("demo").innerHTML = "There are "+WordCount(str)+" words of more than 7 characters higlighted in green above";
+}
 
 //Split blocks of 5 sentences into a paragraph.
-function splitBlocks() {
+function splitBlocks1() {
  
   var block = "";
   block = str.replace(/([^.]+\.){5}/g,exp =>{
-        return(`</p>${exp} <p>`)
+        return(`<p>${exp} </p>`)
     })
     document.getElementById("p1").innerHTML = block;
   
 }
 
+function splitBlocks(){
+const text = str; 
+const re = /[.!?]/;
+var numOfSentences = text.split(re);
+var para="";
+for (let index = 0; index < numOfSentences.length; index++) {
+  var test="";
+  test= '<p>'+test + numOfSentences[index]+"."+ numOfSentences[index+1]+"."+ numOfSentences[index+2]+ "."+numOfSentences[index+3]+"."+ numOfSentences[index+4]+"."+'</p>';
+  para=para+test;
+  console.log(test);
+
+  index=index+4;
+}
+document.getElementById("p1").innerHTML = para;
+}
 
 // Link all occurences of the word "google" to http://www.google.com
 

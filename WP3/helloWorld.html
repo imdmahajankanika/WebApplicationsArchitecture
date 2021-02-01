@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Resposive Webpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+   
+    <h1>List of Buttons</h1>
+    <div>
+    
+    <ul>
+        <li><button type="button" id="btn1" onclick="changeBG()">Change BG color</button></li>
+        <li><button type="button" id="btn2" onclick="removeFirstButton()">Remove the first button</button></li>
+        <li><button type="button" id="btn3" onclick="upperCase()">Uppercase buttons' text</button></li>
+        <li><button type="button" id="btn4" onclick="lowerCase()">Lowercase buttons' text</button></li>
+        <li><button type="button" id="btn5" onclick="helloWorld()">Hello world</button></li>
+        <li><button type="button" id="btn6" onclick="play()">Play Sound</button></li>
+        <li><button type="button" id="btn7" onmouseover="hoverOver()" onmouseout="hoverOut()">Hover over</button></li>
+    </ul>
+    
+    </div>
+    <p id="demo"></p>
+<script>
+  function changeBG() {
+    document.body.style.background =  'palevioletred'
+  }
+ 
+  function removeFirstButton() {
+    if(document.getElementById('btn1').style.display === "none"){
+      document.getElementById('btn1').style.display = "block"
+    }else{
+      document.getElementById('btn1').style.display = "none"
+    }
+  }
+
+  function upperCase() {
+      for(var i=0;i<7;i++){
+        var text = document.getElementsByTagName("button")[i].innerHTML
+      document.getElementsByTagName("button")[i].innerHTML = text.toUpperCase();
+      }
+      
+    
+  }
+  function lowerCase() {
+    for(var i=0;i<7;i++){
+        var text = document.getElementsByTagName("button")[i].innerHTML
+      document.getElementsByTagName("button")[i].innerHTML = text.toLowerCase();
+      }
+    
+  }
+  function helloWorld() {
+    document.getElementById('demo').innerHTML="HELLO WORLD!" 
+  }
+  function play() {
+    var snd = new Audio("Sound.wav");
+    snd.play();
+    snd.currentTime=0;
+   }
+   function hoverOver() {
+    for(var i=0;i<6;i++){
+    document.getElementsByTagName("button")[i].style.visibility = 'hidden';
+    }
+   }
+   function hoverOut() {
+    for(var i=0;i<6;i++){
+    document.getElementsByTagName("button")[i].style.visibility = 'visible';
+    }   }
+  
+  
+  </script>
+  </body>
+</html>
