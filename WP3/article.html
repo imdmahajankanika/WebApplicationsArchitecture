@@ -120,17 +120,17 @@ function sevenChar() {
 }
 
 //Split blocks of 5 sentences into a paragraph.
-function splitBlocks1() {
+function splitBlocks() {
  
   var block = "";
-  block = str.replace(/([^.]+\.){5}/g,exp =>{
+  block = str.replace(/([^.?!]+[\.\?\!]){5}/g,exp =>{
         return(`<p>${exp} </p>`)
     })
     document.getElementById("p1").innerHTML = block;
   
 }
 
-function splitBlocks(){
+function splitBlocks1(){
 const text = str; 
 const re = /[.!?]/;
 var numOfSentences = text.split(re);
