@@ -112,7 +112,6 @@ NICHOLAS CARR is the author of The Shallows and The Glass Cage: Automation and U
   function highlight(text) {
   var inputText = document.getElementById("p1");
   var innerHTML = inputText.innerHTML;
-  var index = innerHTML.indexOf(text);
   innerHTML=innerHTML.replaceAll(text,"<span class='highlight'>" + text + "</span>")
   inputText.innerHTML = innerHTML;
 }
